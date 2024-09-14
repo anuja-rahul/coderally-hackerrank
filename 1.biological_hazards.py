@@ -1,7 +1,6 @@
-from typing import List
 
 
-def bioHazards(n: int, allergic: List[int], poisonous: List[int]) -> int:
+def bioHazards(n, allergic, poisonous):
     all_bacteria = [b for b in range(1, n+1)]
     universal_sample = all_possible_outcomes(all_bacteria)
     exclude = []
@@ -31,7 +30,7 @@ def bioHazards(n: int, allergic: List[int], poisonous: List[int]) -> int:
     return len(universal_sample)
 
 
-def all_possible_outcomes(data_list: List[int]) -> List[List[int]]:
+def all_possible_outcomes(data_list):
     subsets = []
     for i in range(len(data_list)):
         for j in range(i + 1, len(data_list) + 1):

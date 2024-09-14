@@ -27,7 +27,7 @@ def bioHazards(n, allergic, poisonous):
         if item not in test_list:
             temp.append(item)
 
-    return len(universal_sample)
+    print(len(temp))
 
 
 def all_possible_outcomes(data_list):

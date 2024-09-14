@@ -45,4 +45,3 @@ def filter_list(data_list, matching_str):
 
 
 bioHazards(4, [1, 2], [3, 4])
-# 7

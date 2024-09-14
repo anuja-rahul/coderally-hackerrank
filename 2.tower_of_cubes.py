@@ -1,3 +1,5 @@
+import pprint
+
 
 def get_opposite(current_face: str, all_faces: str) -> str:
     face_map = {
@@ -21,21 +23,9 @@ if __name__ == '__main__':
 
     for i in range(number_of_cubes, 0, -1):
         cube = input().strip()
-        cube_data[i] = cube
+        cube_data[i] = {"front": cube[0], "back": cube[1], "left": cube[2], "right": cube[3],
+                        "top": cube[4], "bottom": cube[5]}
 
-    cube_id_list = sorted([int(x) for x in cube_data.keys()], reverse=True)
-    # cube_id_list = [str(x) for x in cube_id_list]
-    # print(cube_id_list)
+    pprint.pprint(cube_data)
 
-    current_side = cube_data[cube_id_list[0]][1]    # yata whotto
-    cube_stack.append([cube_id_list[0], current_side])
-    for i in range(1, len(cube_id_list)):
-        if current_side in cube_data[cube_id_list[i]]:
-            current_side = get_opposite(current_side, cube_data[cube_id_list[i]])
-            cube_stack.append([cube_id_list[i], current_side])
-        # current_side = get_opposite(current_side, cube_data[cube_id_list[i]])    # uda whotto
-        # print(current_side, cube_id_list[i])
 
-    print(cube_stack[0])
-    print(sorted(cube_stack, key=lambda x: x[1]))
-    print(cube_stack)

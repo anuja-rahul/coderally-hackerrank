@@ -1,5 +1,10 @@
+from python_datalogger import DataLogger
 
 
+logger = DataLogger("TestLogger")
+
+
+@logger.timeit
 def bioHazards(n, allergic, poisonous):
     all_bacteria = [b for b in range(1, n+1)]
     universal_sample = all_possible_outcomes(all_bacteria)
@@ -25,6 +30,7 @@ def bioHazards(n, allergic, poisonous):
             temp.append(item)
 
     print(len(temp))
+    return len(temp)
 
 
 def all_possible_outcomes(data_list):
